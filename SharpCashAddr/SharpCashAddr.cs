@@ -265,5 +265,15 @@ namespace SharpCashAddr
 				ret.Append(CHARSET_BASE58[retArr[retIdx]]);
 			return ret.ToString();
 		}
+
+		public static string OldAddrToCashAddr(this string oldAddress)
+		{
+			return Converter.oldAddrToCashAddr(oldAddress, out _, out _);
+		}
+
+		public static string CashAddrToOldAddr(this string cashAddr)
+		{
+			return Converter.cashAddrToOldAddr(cashAddr, out _, out _);
+		}
 	}
 }
